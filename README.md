@@ -294,11 +294,11 @@ graph LR
 <table align="left" width="100%" style="border-collapse: collapse; border: none;">
   <tr>
     <!-- Left Column: Pinout Tables -->
-    <td width="55%" valign="top" style="padding: 0 10px 0 0; border: none;">
+    <td width="45%" valign="top" style="padding: 0 10px 0 0; border: none;">
       <details open>
         <summary><b>STM32 Nucleo-F401RE Pinout</b></summary>
         <br>
-        <table width="100%" style="font-size: 13px;">
+        <table width="100%" style="font-size: 10px;">
           <thead>
             <tr>
               <th align="left">Pin</th>
@@ -322,7 +322,7 @@ graph LR
       <details open>
         <summary><b>ESP32 DevKit Pinout</b></summary>
         <br>
-        <table width="100%" style="font-size: 13px;">
+        <table width="100%" style="font-size: 10px;">
           <thead>
             <tr>
               <th align="left">Pin</th>
@@ -339,7 +339,7 @@ graph LR
       </details>
     </td>
     <!-- Right Column: Circuit Schematic Card -->
-    <td width="45%" valign="top" style="padding: 0 0 0 10px; border: none;">
+    <td width="55%" valign="top" style="padding: 0 0 0 10px; border: none;">
       <div style="background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 12px; text-align: center;">
         <strong style="color: #58a6ff; font-size: 13px; display: block; margin-bottom: 8px;">⚡ Wiring & Power Schematic</strong>
         <a href="docs/diagrams/Circuit%20Diagram.jpg" target="_blank">
