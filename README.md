@@ -46,7 +46,7 @@
 
 ---
 
-## Project Overview
+## 📖 Overview
 
 An embedded water-tank monitoring and control prototype developed using an **STM32 Nucleo-F401RE** as the real-time controller and an **ESP32 DevKit** as the Wi-Fi/Blynk bridge. The system measures the distance between an HC-SR04 ultrasonic sensor and the water surface, converts the measurement into a calibrated water-level percentage, controls a 12 V pump through a relay module, displays live status on an SSD1306 OLED, produces buzzer alerts, and sends data to the Blynk IoT platform.
 
@@ -239,6 +239,45 @@ graph LR
 ---
 
 </details>
+
+
+## 🏗 System Architecture 2
+
+<details open>
+<summary>📊 <b>Interactive Component & Telemetry Graph</b></summary>
+<br>
+
+```mermaid
+graph LR
+    subgraph STM32 ["🧠 STM32 Nucleo-F401RE (Edge Controller)"]
+        A["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/pulse.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/pulse.svg)' width='16'/> HC-SR04 Sensor"] -->|5-Sample Avg| B["Level Compute Engine"]
+        B --> C["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/screen-normal.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/screen-normal.svg)' width='16'/> SSD1306 OLED"]
+        B --> D["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/zap.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/zap.svg)' width='16'/> 12V Relay Driver"]
+        B --> E["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/bell-dot.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/bell-dot.svg)' width='16'/> Piezo Buzzer"]
+    end
+	
+    subgraph ESP32 ["📡 ESP32 DevKit (IoT Bridge)"]
+        F["UART Parser (9600 8N1)"] --> G["Blynk API Client"]
+    end
+
+    subgraph Cloud ["☁️ Cloud & Client"]
+        H["Blynk Mobile App"]
+    end
+
+    STM32 -- "L:<level>,D:<dist>,P:<state>\n(500ms Stream)" --> ESP32
+    ESP32 -- "OVERRIDE:0 / 1" --> STM32
+    ESP32 <-->|Wi-Fi / 2s Interval| Cloud
+    D --> I["⚡ 12V DC Pump"]
+
+    classDef stm32 fill:#03234B,stroke:#58a6ff,stroke-width:1px,color:#fff;
+    classDef esp32 fill:#E7352C,stroke:#ffa198,stroke-width:1px,color:#fff;
+    classDef cloud fill:#00A4E4,stroke:#79c0ff,stroke-width:1px,color:#fff;
+    class STM32 stm32;
+    class ESP32 esp32;
+    class Cloud cloud;
+	
+---
+
 
 <details>
 <summary><strong> Bill of Materials (BOM) </strong></summary>
