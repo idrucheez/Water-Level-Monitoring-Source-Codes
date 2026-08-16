@@ -34,14 +34,14 @@
 </p>
 
 <p align="center">
-  <a href="#-overview">Overview</a> •
-  <a href="#-prototype-gallery">Gallery</a> •
-  <a href="#-system-architecture">Architecture</a> •
-  <a href="#-pinout--schematic">Pinout & Schematic</a> •
-  <a href="#-thresholds--calibration">Calibration</a> •
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-test-results">Results</a> •
-  <a href="#-documentation">Docs</a>
+  <a href="#overview">Overview</a> •
+  <a href="#prototype-gallery">Gallery</a> •
+  <a href="#system-architecture">Architecture</a> •
+  <a href="#pinout--schematic">Pinout & Schematic</a> •
+  <a href="#thresholds--calibration">Calibration</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#results">Results</a> •
+  <a href="#documentation">Docs</a>
 </p>
 
 ---
@@ -163,79 +163,6 @@ graph LR
 
 </details>
 
-<details>
-<summary><strong> Pinout: STM32 Nucleo-F401RE </strong></summary>
-
-<table width="100%" style="border-collapse: collapse; border: none;">
-<!-- <tr> -->
-<!-- Left Column: STM32 Pinout Table -->
-<td width="50%" style="padding: 10px; vertical-align: top; border: none;">
-<!-- <h4 style="margin-top: 0; color: #58a6ff;">📌 Pinout: STM32 Nucleo-F401RE</h4> -->
-<table width="100%" style="border-collapse: collapse; font-size: 13px;">
-<thead>
-<tr style="background-color: #161b22;">
-<th style="padding: 8px; border: 1px solid #30363d; text-align: center;">Pin</th>
-<th style="padding: 8px; border: 1px solid #30363d; text-align: left;">Function</th>
-<th style="padding: 8px; border: 1px solid #30363d; text-align: left;">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="padding: 8px; border: 1px solid #30363d; text-align: center;"><code>PA_0</code></td>
-<td style="padding: 8px; border: 1px solid #30363d;">HC-SR04 Trigger</td>
-<td style="padding: 8px; border: 1px solid #30363d;">3.3V logic output</td>
-</tr>
-<tr>
-<td style="padding: 8px; border: 1px solid #30363d; text-align: center;"><code>PA_1</code></td>
-<td style="padding: 8px; border: 1px solid #30363d;">HC-SR04 Echo</td>
-<td style="padding: 8px; border: 1px solid #30363d;"><strong>Requires 5V → 3.3V divider</strong></td>
-</tr>
-<tr>
-<td style="padding: 8px; border: 1px solid #30363d; text-align: center;"><code>PB_9</code></td>
-<td style="padding: 8px; border: 1px solid #30363d;">OLED SDA</td>
-<td style="padding: 8px; border: 1px solid #30363d;">I2C1</td>
-</tr>
-<tr>
-<td style="padding: 8px; border: 1px solid #30363d; text-align: center;"><code>PB_8</code></td>
-<td style="padding: 8px; border: 1px solid #30363d;">OLED SCL</td>
-<td style="padding: 8px; border: 1px solid #30363d;">I2C1</td>
-</tr>
-<tr>
-<td style="padding: 8px; border: 1px solid #30363d; text-align: center;"><code>D4</code></td>
-<td style="padding: 8px; border: 1px solid #30363d;">OLED Reset</td>
-<td style="padding: 8px; border: 1px solid #30363d;">GPIO</td>
-</tr>
-<tr>
-<td style="padding: 8px; border: 1px solid #30363d; text-align: center;"><code>PA_6</code></td>
-<td style="padding: 8px; border: 1px solid #30363d;">Buzzer Output</td>
-<td style="padding: 8px; border: 1px solid #30363d;">PWM/Digital</td>
-</tr>
-<tr>
-<td style="padding: 8px; border: 1px solid #30363d; text-align: center;"><code>PB_6</code></td>
-<td style="padding: 8px; border: 1px solid #30363d;">Relay Control</td>
-<td style="padding: 8px; border: 1px solid #30363d;">Active HIGH</td>
-</tr>
-<tr>
-<td style="padding: 8px; border: 1px solid #30363d; text-align: center;"><code>PA_9</code></td>
-<td style="padding: 8px; border: 1px solid #30363d;">UART TX</td>
-<td style="padding: 8px; border: 1px solid #30363d;">To ESP32 GPIO16</td>
-</tr>
-<tr>
-<td style="padding: 8px; border: 1px solid #30363d; text-align: center;"><code>PA_10</code></td>
-<td style="padding: 8px; border: 1px solid #30363d;">UART RX</td>
-<td style="padding: 8px; border: 1px solid #30363d;">From ESP32 GPIO17</td>
-</tr>
-</tbody>
-</table>
-</td>
-
-<!-- Right Column: Circuit Schematic Card -->
-<td width="50%" style="padding: 10px; vertical-align: top; border: none;">
-<img src="docs/diagrams/Circuit.jpg" alt="AbangAir Circuit Diagram" width="100%" style="border-radius: 6px; border: 1px solid #21262d; cursor: pointer; max-height: 320px; object-fit: contain; background: #161b22;">
-</td>
-</tr>
-</table>
-
 ---
 
 </details>
@@ -339,7 +266,7 @@ graph LR
     <!-- Right Column: Circuit Schematic Card -->
     <td width="58%" valign="top" style="padding: 0 0 0 10px; border: none;">
       <div style="background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 14px; text-align: center;">
-        <strong style="color: #58a6ff; font-size: 13px; display: block; margin-bottom: 8px;">⚡ Wiring & Power Schematic</strong>
+        <strong style="color: #58a6ff; font-size: 13px; display: block; margin-bottom: 8px;">Wiring & Power Schematic</strong>
         <a href="docs/diagrams/Circuit%20Diagram.jpg" target="_blank">
           <img src="docs/diagrams/Circuit%20Diagram.jpg" alt="Schematic" width="100%" style="border-radius: 6px; border: 1px solid #21262d; cursor: pointer;">
         </a>
@@ -353,7 +280,7 @@ graph LR
 
 ---
 
-## ⚙️ Thresholds & Calibration
+## Thresholds & Calibration
 
 The system uses linear interpolation between physical empty/full distances with a 5-sample noise-rejection filter:
 
@@ -370,7 +297,7 @@ $$\text{Level \%} = \frac{\text{Empty Distance} - \text{Measured Distance}}{\tex
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. STM32 Edge Controller (Keil Studio Cloud / Mbed 2)
 1. Open [Keil Studio Cloud](https://studio.keil.arm.com) and create a project with the **ARM Mbed 2** (`mbed.h`) template.
@@ -404,39 +331,6 @@ $$\text{Level \%} = \frac{\text{Empty Distance} - \text{Measured Distance}}{\tex
 | Main load supply | Three 18650 cells in series, approximately 11.1 V nominal and 12.6 V fully charged |
 
 See [`docs/CONNECTIONS.md`](docs/CONNECTIONS.md) for the full wiring table and electrical cautions.
-
-</details>
-
-
-
-
-
-<details>
-<summary><strong> Pinout: STM32 Nucleo-F401RE </strong></summary>
-
-| Pin | Function | Notes |
-|:---:|:---|:---|
-| `PA_0` | HC-SR04 Trigger | 3.3V logic output |
-| `PA_1` | HC-SR04 Echo | **Requires 5V→3.3V voltage divider** |
-| `PB_9` | OLED SDA | I2C1 |
-| `PB_8` | OLED SCL | I2C1 |
-| `D4` | OLED Reset | GPIO |
-| `PA_6` | Buzzer Output | PWM/Digital |
-| `PB_6` | Relay Control | Active HIGH |
-| `PA_9` | UART TX | To ESP32 GPIO16 |
-| `PA_10`| UART RX | From ESP32 GPIO17 |
-
-</details>
-
-<details>
-<summary><strong> Pinout: ESP32 DevKit </strong></summary>
-
-
-| Pin | Function | Notes |
-|:---:|:---|:---|
-| `GPIO16` | UART2 RX | From STM32 PA_9 |
-| `GPIO17` | UART2 TX | To STM32 PA_10 |
-| `GND` | Signal Ground | **Must be shared with STM32** |
 
 </details>
 
@@ -526,15 +420,6 @@ The documented test container used:
 | Critical low | Approximately 10% | ON | 2-second alert |
 
 The project notes report approximately ±1 cm ultrasonic consistency after five-sample averaging and a Blynk update delay of roughly 2–3 seconds.
-
-## Known Implementation Details
-
-- The STM32 code includes manual-override handling even though the development notes state that the feature was not required in the final demonstration.
-- In the implemented STM32 logic, `OVERRIDE:1` forces the relay ON. `OVERRIDE:0` returns control to the automatic threshold logic.
-- The ESP32 code can call Blynk event logging repeatedly every two seconds while an alert condition remains true; no event latch is implemented in that sketch.
-- The STM32 source retains a global `DigitalOut esp_tx(PA_9)` declaration and also creates `Serial espUart(PA_9, PA_10)` inside `main()`. This repository leaves that source unchanged.
-- The relay logic assumes that a logic HIGH activates the selected relay module.
-- Common ground is mandatory for UART and relay-control reference levels.
 
 ## Future Improvements
 
