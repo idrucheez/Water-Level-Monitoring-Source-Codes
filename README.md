@@ -8,9 +8,9 @@
 <img alt="Blynk IoT" src="https://img.shields.io/badge/IoT-Blynk-00A4E4?logo=blynk&logoColor=white">
 </p>
 
-<p align="center">
-<img src="docs/diagrams/Flowchart.png" alt="System Flowchart" width="300px">
-</p>
+<!-- <p align="center"> -->
+<!-- <img src="docs/diagrams/Flowchart.png" alt="System Flowchart" width="300px"> -->
+<!-- </p> -->
 
 ---
 
