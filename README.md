@@ -289,14 +289,14 @@ graph LR
 ---
 </details>
 
-## 🔌 Pinout & Schematic
+## Pinout & Schematic
 
 <table align="center" width="100%" style="border-collapse: collapse; border: none;">
   <tr>
     <!-- Left Column: Pinout Tables -->
     <td width="55%" valign="top" style="padding: 0 10px 0 0; border: none;">
       <details open>
-        <summary><b>📌 STM32 Nucleo-F401RE Pinout</b></summary>
+        <summary><b>STM32 Nucleo-F401RE Pinout</b></summary>
         <br>
         <table width="100%" style="font-size: 13px;">
           <thead>
@@ -307,20 +307,20 @@ graph LR
             </tr>
           </thead>
           <tbody>
-            <tr><td align="center"><code>PA_0</code></td><td>HC-SR04 TRIG</td><td>10 µs trigger pulse output[cite: 10, 15]</td></tr>
+            <tr><td align="center"><code>PA_0</code></td><td>HC-SR04 TRIG</td><td>10 µs trigger pulse output</td></tr>
             <tr><td align="center"><code>PA_1</code></td><td>HC-SR04 ECHO</td><td><strong>Via 1kΩ / 2kΩ divider (3.3V)</strong></td></tr>
-            <tr><td align="center"><code>PB_9</code> / <code>PB_8</code></td><td>I2C1 SDA / SCL</td><td>SSD1306 OLED (Addr: <code>0x3C</code>, 100 kHz)[cite: 10, 15]</td></tr>
-            <tr><td align="center"><code>D4</code></td><td>OLED RST</td><td>Hardware display reset[cite: 10, 15]</td></tr>
-            <tr><td align="center"><code>PA_6</code></td><td>Buzzer</td><td>Active HIGH alarm driver[cite: 10, 15]</td></tr>
-            <tr><td align="center"><code>PB_6</code></td><td>Relay Signal</td><td>Active HIGH relay trigger (Avoids PA_7 conflict)[cite: 10, 12, 15]</td></tr>
-            <tr><td align="center"><code>PA_9</code></td><td>UART TX</td><td>To ESP32 <code>GPIO16</code> (9600 baud)[cite: 10, 14, 15]</td></tr>
-            <tr><td align="center"><code>PA_10</code></td><td>UART RX</td><td>From ESP32 <code>GPIO17</code>[cite: 10, 14, 15]</td></tr>
+            <tr><td align="center"><code>PB_9</code> / <code>PB_8</code></td><td>I2C1 SDA / SCL</td><td>SSD1306 OLED (Addr: <code>0x3C</code>, 100 kHz)</td></tr>
+            <tr><td align="center"><code>D4</code></td><td>OLED RST</td><td>Hardware display reset</td></tr>
+            <tr><td align="center"><code>PA_6</code></td><td>Buzzer</td><td>Active HIGH alarm driver</td></tr>
+            <tr><td align="center"><code>PB_6</code></td><td>Relay Signal</td><td>Active HIGH relay trigger (Avoids PA_7 conflict)</td></tr>
+            <tr><td align="center"><code>PA_9</code></td><td>UART TX</td><td>To ESP32 <code>GPIO16</code> (9600 baud)</td></tr>
+            <tr><td align="center"><code>PA_10</code></td><td>UART RX</td><td>From ESP32 <code>GPIO17</code></td></tr>
           </tbody>
         </table>
       </details>
       <br>
       <details open>
-        <summary><b>📌 ESP32 DevKit Pinout</b></summary>
+        <summary><b>ESP32 DevKit Pinout</b></summary>
         <br>
         <table width="100%" style="font-size: 13px;">
           <thead>
@@ -331,9 +331,9 @@ graph LR
             </tr>
           </thead>
           <tbody>
-            <tr><td align="center"><code>GPIO16</code></td><td>UART2 RX</td><td>Connected to STM32 <code>PA_9</code> (TX)[cite: 11, 14, 15]</td></tr>
-            <tr><td align="center"><code>GPIO17</code></td><td>UART2 TX</td><td>Connected to STM32 <code>PA_10</code> (RX)[cite: 11, 14, 15]</td></tr>
-            <tr><td align="center"><code>GND</code></td><td>Common GND</td><td><strong>Mandatory common ground reference</strong>[cite: 12, 15]</td></tr>
+            <tr><td align="center"><code>GPIO16</code></td><td>UART2 RX</td><td>Connected to STM32 <code>PA_9</code> (TX)</td></tr>
+            <tr><td align="center"><code>GPIO17</code></td><td>UART2 TX</td><td>Connected to STM32 <code>PA_10</code> (RX)</td></tr>
+            <tr><td align="center"><code>GND</code></td><td>Common GND</td><td><strong>Mandatory common ground reference</strong></td></tr>
           </tbody>
         </table>
       </details>
@@ -346,7 +346,7 @@ graph LR
           <img src="docs/diagrams/Circuit%20Diagram.jpg" alt="Schematic" width="100%" style="border-radius: 6px; border: 1px solid #21262d; cursor: pointer;">
         </a>
         <p style="color: #8b949e; font-size: 11px; margin: 8px 0 0 0; line-height: 1.3;">
-          Dual power routing: 11.1V raw battery loop for the 12V pump relay; buck-regulated 5V bus powering logic.[cite: 15]
+          Dual power routing: 11.1V raw battery loop for the 12V pump relay; buck-regulated 5V bus powering logic.
         </p>
       </div>
     </td>
@@ -357,18 +357,18 @@ graph LR
 
 ## ⚙️ Thresholds & Calibration
 
-The system uses linear interpolation between physical empty/full distances with a 5-sample noise-rejection filter[cite: 10, 13]:
+The system uses linear interpolation between physical empty/full distances with a 5-sample noise-rejection filter:
 
-$$\text{Level \%} = \frac{\text{Empty Distance} - \text{Measured Distance}}{\text{Empty Distance} - \text{Full Distance}} \times 100$$[cite: 10, 13]
+$$\text{Level \%} = \frac{\text{Empty Distance} - \text{Measured Distance}}{\text{Empty Distance} - \text{Full Distance}} \times 100$$
 
 | Parameter | Calibrated Value | Operational Logic |
 | :--- | :---: | :--- |
-| **Empty Tank Reference** | `18.5 cm` | Calibrated container baseline (maps to 0%)[cite: 10, 13] |
-| **Full Tank Reference** | `3.0 cm` | Minimum safe container limit (maps to 100%)[cite: 10, 13] |
-| **Pump Threshold** | `< 90%` ON / `≥ 90%` OFF | Automatic filling cutoff boundary[cite: 10, 13] |
-| **Critical Low Alarm** | `≤ 10%` | Latched 2s buzzer beep + `critical_low` Blynk push notification[cite: 10, 11, 13] |
-| **Full Tank Alarm** | `≥ 95%` | Latched 2s buzzer beep + `tank_full` Blynk push notification[cite: 10, 11, 13] |
-| **Sensor Fault Safeguard** | Invalid / Timeout | Automatic relay deactivation + OLED error banner[cite: 10, 13] |
+| **Empty Tank Reference** | `18.5 cm` | Calibrated container baseline (maps to 0%) |
+| **Full Tank Reference** | `3.0 cm` | Minimum safe container limit (maps to 100%) |
+| **Pump Threshold** | `< 90%` ON / `≥ 90%` OFF | Automatic filling cutoff boundary |
+| **Critical Low Alarm** | `≤ 10%` | Latched 2s buzzer beep + `critical_low` Blynk push notification |
+| **Full Tank Alarm** | `≥ 95%` | Latched 2s buzzer beep + `tank_full` Blynk push notification |
+| **Sensor Fault Safeguard** | Invalid / Timeout | Automatic relay deactivation + OLED error banner |
 
 ---
 
