@@ -116,13 +116,13 @@ in a new browser tab ("pop") for close-up technical inspection.
   </tr>
   <!-- Row 2 -->
   <tr>
-    <td width="50%" valign="top" style="padding: 1px; border: none;">
+    <td width="50%" valign="middle" style="padding: 1px; border: none;">
       <b>Submersible Pump</b><br><br>
       <a href="docs/hardware_photos/6248794734553927232_121.jpg" target="_blank">
         <img src="docs/hardware_photos/6248794734553927232_121.jpg" alt="Submersible Pump" width="80%" style="border-radius: 2px; border: 1px solid #30363d; cursor: pointer;">
       </a>
     </td>
-    <td width="50%" align="center" valign="top" style="padding: 1px; border: none;">
+    <td width="50%" align="center" valign="middle" style="padding: 1px; border: none;">
       <b>Control Circuitry</b><br><br>
       <a href="docs/hardware_photos/6248794734553927236_121.jpg" target="_blank">
         <img src="docs/hardware_photos/6248794734553927236_121.jpg" alt="STM32 and ESP32" width="80%" style="border-radius: 2px; border: 1px solid #30363d; cursor: pointer;">
