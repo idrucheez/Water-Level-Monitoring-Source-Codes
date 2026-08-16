@@ -137,13 +137,13 @@ in a new browser tab ("pop") for close-up technical inspection.
     <td width="50%" align="center" valign="middle" style="padding: 4px; border: none;">
       <div align="center"><b>Full Hardware Assembly</b></div>
       <a href="docs/hardware_photos/6235768536831824310_121.jpg" target="_blank" style="display: block; margin-top: 4px;">
-        <img src="docs/hardware_photos/6235768536831824310_121.jpg" alt="Full Hardware Assembly" width="200%" height="300" style="object-fit: cover; transform: rotate(90deg); border-radius: 6px; border: 1px solid #30363d; cursor: pointer; display: block;">
+        <img src="docs/hardware_photos/6235768536831824310_121.jpg" alt="Full Hardware Assembly" width="150%" height="300" style="object-fit: cover; transform: rotate(90deg); border-radius: 6px; border: 1px solid #30363d; cursor: pointer; display: block;">
       </a>
     </td>
     <td width="50%" align="center" valign="middle" style="padding: 4px; border: none;">
       <div align="center"><b>Local OLED Interface</b></div>
       <a href="docs/hardware_photos/6248794734553927220_121.jpg" target="_blank" style="display: block; margin-top: 4px;">
-        <img src="docs/hardware_photos/6248794734553927220_121.jpg" alt="OLED UI Display" width="200%" height="300" style="object-fit: cover; border-radius: 6px; border: 1px solid #30363d; cursor: pointer; display: block;">
+        <img src="docs/hardware_photos/6248794734553927220_121.jpg" alt="OLED UI Display" width="150%" height="300" style="object-fit: cover; border-radius: 6px; border: 1px solid #30363d; cursor: pointer; display: block;">
       </a>
     </td>
   </tr>
