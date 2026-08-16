@@ -117,12 +117,12 @@ graph LR
     subgraph STM32 ["🧠 STM32 Nucleo-F401RE (Edge Controller)"]
         A["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/pulse.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/pulse.svg)' width='20' height='20' /> HC-SR04 Sensor"] -->|5-sample avg| B["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/symbol-variable.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/symbol-variable.svg)' width='20' height='20' /> Level Calculation"]
         B --> C["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/screen-normal.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/screen-normal.svg)' width='20' height='20' /> SSD1306 OLED"]
-        B --> D["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/zap.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/zap.svg)' width='20' height='20' /> Relay / Pump Control"]
+        B --> D["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/zap.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/zap.svg)' width='20' height='20' /> 12V Relay / Pump Control"]
         B --> E["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/bell-dot.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/bell-dot.svg)' width='20' height='20' /> Piezo Buzzer"]
     end
 	
     subgraph ESP32 ["📡 ESP32 DevKit (IoT Bridge)"]
-        F["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/terminal.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/terminal.svg)' width='20' height='20' /> UART Parser"] --> G["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/cloud.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/cloud.svg)' width='20' height='20' /> Blynk Cloud API"]
+        F["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/terminal.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/terminal.svg)' width='20' height='20' /> UART Parser (9600 8N1)"] --> G["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/cloud.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/cloud.svg)' width='20' height='20' /> Blynk Cloud API"]
     end
 
     subgraph Cloud ["☁️ Blynk Cloud / Mobile App"]
@@ -131,7 +131,7 @@ graph LR
 
     STM32 -- "UART (9600)<br/>L:level, D:dist, P:state" --> ESP32
     ESP32 -- "V2 Override<br/>(OVERRIDE:0/1)" --> STM32
-    ESP32 <-->|Wi-Fi| Cloud
+    ESP32 <-->|Wi-Fi / 2s Interval| Cloud
     D --> I["⚡ 12V DC Pump"]
 
     %% Visual styling configurations to decrease vertical height and footprint
@@ -156,57 +156,6 @@ graph LR
 </details>
 
 ---
-
-</details>
-
-
-## 🏗 System Architecture 2
-
-<details open>
-<summary>📊 <b>Interactive Component & Telemetry Graph</b></summary>
-<br>
-
-```mermaid
-graph LR
-    subgraph STM32 ["🧠 STM32 Nucleo-F401RE (Edge Controller)"]
-        A["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/pulse.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/pulse.svg)' width='16'/> HC-SR04 Sensor"] -->|5-Sample Avg| B["Level Compute Engine"]
-        B --> C["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/screen-normal.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/screen-normal.svg)' width='16'/> SSD1306 OLED"]
-        B --> D["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/zap.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/zap.svg)' width='16'/> 12V Relay Driver"]
-        B --> E["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/bell-dot.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/bell-dot.svg)' width='16'/> Piezo Buzzer"]
-    end
-	
-    subgraph ESP32 ["📡 ESP32 DevKit (IoT Bridge)"]
-        F["UART Parser (9600 8N1)"] --> G["Blynk API Client"]
-    end
-
-    subgraph Cloud ["☁️ Cloud & Client"]
-        H["Blynk Mobile App"]
-    end
-
-    STM32 -- "L:<level>,D:<dist>,P:<state>\n(500ms Stream)" --> ESP32
-    ESP32 -- "OVERRIDE:0 / 1" --> STM32
-    ESP32 <-->|Wi-Fi / 2s Interval| Cloud
-    D --> I["⚡ 12V DC Pump"]
-
-    classDef stm32 fill:#03234B,stroke:#58a6ff,stroke-width:1px,color:#fff;
-    classDef esp32 fill:#E7352C,stroke:#ffa198,stroke-width:1px,color:#fff;
-    classDef cloud fill:#00A4E4,stroke:#79c0ff,stroke-width:1px,color:#fff;
-    class STM32 stm32;
-    class ESP32 esp32;
-    class Cloud cloud;
-	
-    style A fill:#1e1e2e,stroke:#313244,color:#cdd6f4
-    style B fill:#1e1e2e,stroke:#313244,color:#cdd6f4
-    style C fill:#1e1e2e,stroke:#313244,color:#cdd6f4
-    style D fill:#1e1e2e,stroke:#313244,color:#cdd6f4
-    style E fill:#1e1e2e,stroke:#313244,color:#cdd6f4
-    style F fill:#1e1e2e,stroke:#313244,color:#cdd6f4
-    style G fill:#1e1e2e,stroke:#313244,color:#cdd6f4
-    style H fill:#1e1e2e,stroke:#313244,color:#cdd6f4
-    style I fill:#313244,stroke:#f38ba8,color:#f38ba8
-```
----
-</details>
 
 ## Pinout & Schematic
 
