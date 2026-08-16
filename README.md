@@ -293,6 +293,67 @@ graph LR
 
 <table align="left" width="100%" style="border-collapse: collapse; border: none;">
   <tr>
+    <!-- Left Column: 2-Column Pinout Tables -->
+    <td width="42%" valign="top" style="padding: 0 10px 0 0; border: none;">
+      <details open>
+        <summary><b>STM32 Nucleo-F401RE Pinout</b></summary>
+        <br>
+        <table width="100%" style="font-size: 11px; border-collapse: collapse;">
+          <thead>
+            <tr>
+              <th align="left" style="width: 28%;">Pin</th>
+              <th align="left">Interface & Hardware Target</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>PA_0</code></td><td>HC-SR04 TRIG (10 µs pulse)[cite: 10, 15]</td></tr>
+            <tr><td><code>PA_1</code></td><td>HC-SR04 ECHO <strong>(via 5V→3.3V divider)</strong>[cite: 15]</td></tr>
+            <tr><td><code>PB_9/8</code></td><td>SSD1306 OLED (I2C1 SDA / SCL)[cite: 10, 15]</td></tr>
+            <tr><td><code>D4</code></td><td>SSD1306 OLED Reset (RST)[cite: 10, 15]</td></tr>
+            <tr><td><code>PA_6</code></td><td>Piezo Buzzer (Active HIGH)[cite: 10, 15]</td></tr>
+            <tr><td><code>PB_6</code></td><td>12V Relay Trigger (Active HIGH)[cite: 10, 12, 15]</td></tr>
+            <tr><td><code>PA_9</code></td><td>UART TX ➔ ESP32 GPIO16 (9600 baud)[cite: 10, 14, 15]</td></tr>
+            <tr><td><code>PA_10</code></td><td>UART RX 🠔 ESP32 GPIO17[cite: 10, 14, 15]</td></tr>
+          </tbody>
+        </table>
+      </details>
+      <br>
+      <details open>
+        <summary><b>ESP32 DevKit Pinout</b></summary>
+        <br>
+        <table width="100%" style="font-size: 11px; border-collapse: collapse;">
+          <thead>
+            <tr>
+              <th align="left" style="width: 28%;">Pin</th>
+              <th align="left">Interface & Hardware Target</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>GPIO16</code></td><td>UART2 RX 🠔 STM32 PA_9[cite: 11, 14, 15]</td></tr>
+            <tr><td><code>GPIO17</code></td><td>UART2 TX ➔ STM32 PA_10[cite: 11, 14, 15]</td></tr>
+            <tr><td><code>GND</code></td><td><strong>Common Ground Reference</strong>[cite: 12, 15]</td></tr>
+          </tbody>
+        </table>
+      </details>
+    </td>
+    <!-- Right Column: Circuit Schematic Card -->
+    <td width="58%" valign="top" style="padding: 0 0 0 10px; border: none;">
+      <div style="background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 14px; text-align: center;">
+        <strong style="color: #58a6ff; font-size: 13px; display: block; margin-bottom: 8px;">⚡ Wiring & Power Schematic</strong>
+        <a href="docs/diagrams/Circuit%20Diagram.jpg" target="_blank">
+          <img src="docs/diagrams/Circuit%20Diagram.jpg" alt="Schematic" width="100%" style="border-radius: 6px; border: 1px solid #21262d; cursor: pointer;">
+        </a>
+        <p style="color: #8b949e; font-size: 11px; margin: 8px 0 0 0; line-height: 1.3;">
+          Dual power routing: 11.1V raw battery loop for the 12V pump relay; buck-regulated 5V bus powering logic[cite: 15].
+        </p>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+<table align="left" width="100%" style="border-collapse: collapse; border: none;">
+  <tr>
     <!-- Left Column: Pinout Tables -->
     <td width="45%" valign="top" style="padding: 0 10px 0 0; border: none;">
       <details open>
