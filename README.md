@@ -306,14 +306,14 @@ graph LR
             </tr>
           </thead>
           <tbody>
-            <tr><td><code>PA_0</code></td><td>HC-SR04 TRIG (10 µs pulse)[cite: 10, 15]</td></tr>
-            <tr><td><code>PA_1</code></td><td>HC-SR04 ECHO <strong>(via 5V→3.3V divider)</strong>[cite: 15]</td></tr>
-            <tr><td><code>PB_9/8</code></td><td>SSD1306 OLED (I2C1 SDA / SCL)[cite: 10, 15]</td></tr>
-            <tr><td><code>D4</code></td><td>SSD1306 OLED Reset (RST)[cite: 10, 15]</td></tr>
-            <tr><td><code>PA_6</code></td><td>Piezo Buzzer (Active HIGH)[cite: 10, 15]</td></tr>
-            <tr><td><code>PB_6</code></td><td>12V Relay Trigger (Active HIGH)[cite: 10, 12, 15]</td></tr>
-            <tr><td><code>PA_9</code></td><td>UART TX ➔ ESP32 GPIO16 (9600 baud)[cite: 10, 14, 15]</td></tr>
-            <tr><td><code>PA_10</code></td><td>UART RX 🠔 ESP32 GPIO17[cite: 10, 14, 15]</td></tr>
+            <tr><td><code>PA_0</code></td><td>HC-SR04 TRIG (10 µs pulse)</td></tr>
+            <tr><td><code>PA_1</code></td><td>HC-SR04 ECHO <strong>(via 5V→3.3V divider)</strong></td></tr>
+            <tr><td><code>PB_9/8</code></td><td>SSD1306 OLED (I2C1 SDA / SCL)</td></tr>
+            <tr><td><code>D4</code></td><td>SSD1306 OLED Reset (RST)</td></tr>
+            <tr><td><code>PA_6</code></td><td>Piezo Buzzer (Active HIGH)</td></tr>
+            <tr><td><code>PB_6</code></td><td>12V Relay Trigger (Active HIGH)</td></tr>
+            <tr><td><code>PA_9</code></td><td>UART TX ➔ ESP32 GPIO16 (9600 baud)</td></tr>
+            <tr><td><code>PA_10</code></td><td>UART RX 🠔 ESP32 GPIO17</td></tr>
           </tbody>
         </table>
       </details>
@@ -329,9 +329,9 @@ graph LR
             </tr>
           </thead>
           <tbody>
-            <tr><td><code>GPIO16</code></td><td>UART2 RX 🠔 STM32 PA_9[cite: 11, 14, 15]</td></tr>
-            <tr><td><code>GPIO17</code></td><td>UART2 TX ➔ STM32 PA_10[cite: 11, 14, 15]</td></tr>
-            <tr><td><code>GND</code></td><td><strong>Common Ground Reference</strong>[cite: 12, 15]</td></tr>
+            <tr><td><code>GPIO16</code></td><td>UART2 RX 🠔 STM32 PA_9</td></tr>
+            <tr><td><code>GPIO17</code></td><td>UART2 TX ➔ STM32 PA_10</td></tr>
+            <tr><td><code>GND</code></td><td><strong>Common Ground Reference</strong></td></tr>
           </tbody>
         </table>
       </details>
@@ -339,69 +339,6 @@ graph LR
     <!-- Right Column: Circuit Schematic Card -->
     <td width="58%" valign="top" style="padding: 0 0 0 10px; border: none;">
       <div style="background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 14px; text-align: center;">
-        <strong style="color: #58a6ff; font-size: 13px; display: block; margin-bottom: 8px;">⚡ Wiring & Power Schematic</strong>
-        <a href="docs/diagrams/Circuit%20Diagram.jpg" target="_blank">
-          <img src="docs/diagrams/Circuit%20Diagram.jpg" alt="Schematic" width="100%" style="border-radius: 6px; border: 1px solid #21262d; cursor: pointer;">
-        </a>
-        <p style="color: #8b949e; font-size: 11px; margin: 8px 0 0 0; line-height: 1.3;">
-          Dual power routing: 11.1V raw battery loop for the 12V pump relay; buck-regulated 5V bus powering logic[cite: 15].
-        </p>
-      </div>
-    </td>
-  </tr>
-</table>
-
-
-<table align="left" width="100%" style="border-collapse: collapse; border: none;">
-  <tr>
-    <!-- Left Column: Pinout Tables -->
-    <td width="45%" valign="top" style="padding: 0 10px 0 0; border: none;">
-      <details open>
-        <summary><b>STM32 Nucleo-F401RE Pinout</b></summary>
-        <br>
-        <table width="100%" style="font-size: 10px;">
-          <thead>
-            <tr>
-              <th align="left">Pin</th>
-              <th align="left">Function</th>
-              <th align="left">Hardware Target / Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td align="left"><code>PA_0</code></td><td>HC-SR04 TRIG</td><td>10 µs trigger pulse output</td></tr>
-            <tr><td align="left"><code>PA_1</code></td><td>HC-SR04 ECHO</td><td><strong>Via 1kΩ / 2kΩ divider (3.3V)</strong></td></tr>
-            <tr><td align="left"><code>PB_9</code> / <code>PB_8</code></td><td>I2C1 SDA / SCL</td><td>SSD1306 OLED (Addr: <code>0x3C</code>, 100 kHz)</td></tr>
-            <tr><td align="left"><code>D4</code></td><td>OLED RST</td><td>Hardware display reset</td></tr>
-            <tr><td align="left"><code>PA_6</code></td><td>Buzzer</td><td>Active HIGH alarm driver</td></tr>
-            <tr><td align="left"><code>PB_6</code></td><td>Relay Signal</td><td>Active HIGH relay trigger (Avoids PA_7 conflict)</td></tr>
-            <tr><td align="left"><code>PA_9</code></td><td>UART TX</td><td>To ESP32 <code>GPIO16</code> (9600 baud)</td></tr>
-            <tr><td align="left"><code>PA_10</code></td><td>UART RX</td><td>From ESP32 <code>GPIO17</code></td></tr>
-          </tbody>
-        </table>
-      </details>
-      <br>
-      <details open>
-        <summary><b>ESP32 DevKit Pinout</b></summary>
-        <br>
-        <table width="100%" style="font-size: 10px;">
-          <thead>
-            <tr>
-              <th align="left">Pin</th>
-              <th align="left">Function</th>
-              <th align="left">Hardware Target / Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td align="left"><code>GPIO16</code></td><td>UART2 RX</td><td>Connected to STM32 <code>PA_9</code> (TX)</td></tr>
-            <tr><td align="left"><code>GPIO17</code></td><td>UART2 TX</td><td>Connected to STM32 <code>PA_10</code> (RX)</td></tr>
-            <tr><td align="left"><code>GND</code></td><td>Common GND</td><td><strong>Mandatory common ground reference</strong></td></tr>
-          </tbody>
-        </table>
-      </details>
-    </td>
-    <!-- Right Column: Circuit Schematic Card -->
-    <td width="55%" valign="top" style="padding: 0 0 0 10px; border: none;">
-      <div style="background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 12px; text-align: center;">
         <strong style="color: #58a6ff; font-size: 13px; display: block; margin-bottom: 8px;">⚡ Wiring & Power Schematic</strong>
         <a href="docs/diagrams/Circuit%20Diagram.jpg" target="_blank">
           <img src="docs/diagrams/Circuit%20Diagram.jpg" alt="Schematic" width="100%" style="border-radius: 6px; border: 1px solid #21262d; cursor: pointer;">
