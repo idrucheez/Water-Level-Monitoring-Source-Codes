@@ -276,8 +276,18 @@ graph LR
     class ESP32 esp32;
     class Cloud cloud;
 	
+    style A fill:#1e1e2e,stroke:#313244,color:#cdd6f4
+    style B fill:#1e1e2e,stroke:#313244,color:#cdd6f4
+    style C fill:#1e1e2e,stroke:#313244,color:#cdd6f4
+    style D fill:#1e1e2e,stroke:#313244,color:#cdd6f4
+    style E fill:#1e1e2e,stroke:#313244,color:#cdd6f4
+    style F fill:#1e1e2e,stroke:#313244,color:#cdd6f4
+    style G fill:#1e1e2e,stroke:#313244,color:#cdd6f4
+    style H fill:#1e1e2e,stroke:#313244,color:#cdd6f4
+    style I fill:#313244,stroke:#f38ba8,color:#f38ba8
+```
 ---
-
+</details>
 
 <details>
 <summary><strong> Bill of Materials (BOM) </strong></summary>
