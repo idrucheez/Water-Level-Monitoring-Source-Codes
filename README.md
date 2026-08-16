@@ -147,11 +147,11 @@ graph LR
 <table align="left" width="100%" style="border-collapse: collapse; border: none;">
   <tr>
     <!-- Left Column: 2-Column Pinout Tables -->
-    <td width="42%" valign="top" style="padding: 0 10px 0 0; border: none;">
+    <td width="36%" valign="top" style="padding: 0 6px 0 0; border: none;">
       <details open>
         <summary><b>STM32 Nucleo-F401RE Pinout</b></summary>
         <br>
-        <table width="100%" style="font-size: 11px; border-collapse: collapse;">
+        <table width="100%" style="font-size: 9px; border-collapse: collapse;">
           <thead>
             <tr>
               <th align="left" style="width: 28%;">Pin</th>
@@ -174,7 +174,7 @@ graph LR
       <details open>
         <summary><b>ESP32 DevKit Pinout</b></summary>
         <br>
-        <table width="100%" style="font-size: 11px; border-collapse: collapse;">
+        <table width="100%" style="font-size: 9px; border-collapse: collapse;">
           <thead>
             <tr>
               <th align="left" style="width: 28%;">Pin</th>
@@ -190,13 +190,13 @@ graph LR
       </details>
     </td>
     <!-- Right Column: Circuit Schematic Card -->
-    <td width="58%" valign="top" style="padding: 0 0 0 10px; border: none;">
-      <div style="background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 14px; text-align: center;">
-        <strong style="color: #58a6ff; font-size: 13px; display: block; margin-bottom: 8px;">Wiring & Power Schematic</strong>
+    <td width="64%" valign="top" style="padding: 0 0 0 10px; border: none;">
+      <div style="background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 10px; text-align: center;">
+        <strong style="color: #58a6ff; font-size: 9px; display: block; margin-bottom: 6px;">Wiring & Power Schematic</strong>
         <a href="docs/diagrams/Circuit%20Diagram.jpg" target="_blank">
           <img src="docs/diagrams/Circuit%20Diagram.jpg" alt="Schematic" width="100%" style="border-radius: 6px; border: 1px solid #21262d; cursor: pointer;">
         </a>
-        <p style="color: #8b949e; font-size: 11px; margin: 8px 0 0 0; line-height: 1.3;">
+        <p style="color: #8b949e; font-size: 9px; margin: 6px 0 0 0; line-height: 1.3;">
           Dual power routing: 11.1V raw battery loop for the 12V pump relay; buck-regulated 5V bus powering logic.
         </p>
       </div>
