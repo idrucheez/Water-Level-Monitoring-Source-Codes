@@ -58,8 +58,7 @@ Developed as a comprehensive hardware-software portfolio project for **EFB 2073/
 ---
 
 <details>
-<summary>📸: <b> Full Hardware Assembly </b></summary>
-
+<summary><b>Full Hardware Assembly</b></summary>
 <!-- 
 Bulletproof HTML Table. 
 Standard Markdown parsers often choke on raw HTML <img> tags inside native Markdown tables. 
@@ -70,7 +69,6 @@ Using a pure HTML <table> solves rendering issues on GitHub, GitLab, and local I
 <img src="docs/hardware_photos/6235768536831824310_121.jpg" alt="Full Hardware Assembly" width="420px" style="transform: rotate(90deg); margin: 90px 0; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); cursor: pointer;">
 </a>
 </p>
-
 </details>
 
 ---
@@ -97,6 +95,43 @@ in a new browser tab ("pop") for close-up technical inspection.
 </td>
 </tr>
 </table>
+
+---
+
+<table align="center" width="100%" style="border-collapse: collapse; border: none;">
+  <!-- Row 1 -->
+  <tr>
+    <td width="50%" align="center" valign="top" style="padding: 8px; border: none;">
+      <b>Full Hardware Assembly</b><br><br>
+      <a href="docs/hardware_photos/6235768536831824310_121.jpg" target="_blank">
+        <img src="docs/hardware_photos/6235768536831824310_121.jpg" alt="Full Hardware Assembly" width="100%" style="transform: rotate(90deg); margin: 30px 0; border-radius: 6px; border: 1px solid #30363d; cursor: pointer;">
+      </a>
+    </td>
+    <td width="50%" align="center" valign="top" style="padding: 8px; border: none;">
+      <b>Local OLED Interface</b><br><br>
+      <a href="docs/hardware_photos/6248794734553927220_121.jpg" target="_blank">
+        <img src="docs/hardware_photos/6248794734553927220_121.jpg" alt="OLED UI Display" width="100%" style="border-radius: 6px; border: 1px solid #30363d; cursor: pointer;">
+      </a>
+    </td>
+  </tr>
+  <!-- Row 2 -->
+  <tr>
+    <td width="50%" align="center" valign="top" style="padding: 8px; border: none;">
+      <b>Submersible Pump</b><br><br>
+      <a href="docs/hardware_photos/6248794734553927232_121.jpg" target="_blank">
+        <img src="docs/hardware_photos/6248794734553927232_121.jpg" alt="Submersible Pump" width="100%" style="border-radius: 6px; border: 1px solid #30363d; cursor: pointer;">
+      </a>
+    </td>
+    <td width="50%" align="center" valign="top" style="padding: 8px; border: none;">
+      <b>Control Circuitry</b><br><br>
+      <a href="docs/hardware_photos/6248794734553927236_121.jpg" target="_blank">
+        <img src="docs/hardware_photos/6248794734553927236_121.jpg" alt="STM32 and ESP32" width="100%" style="border-radius: 6px; border: 1px solid #30363d; cursor: pointer;">
+      </a>
+    </td>
+  </tr>
+</table>
+
+
 
 ---
 
