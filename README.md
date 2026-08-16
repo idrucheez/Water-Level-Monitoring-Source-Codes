@@ -57,93 +57,19 @@ Developed as a comprehensive hardware-software portfolio project for **EFB 2073/
 
 ---
 
-<details>
-<summary><b>Full Hardware Assembly</b></summary>
-<!-- 
-Bulletproof HTML Table. 
-Standard Markdown parsers often choke on raw HTML <img> tags inside native Markdown tables. 
-Using a pure HTML <table> solves rendering issues on GitHub, GitLab, and local IDEs.
--->
-<p align="center">
-<a href="docs/hardware_photos/6235768536831824310_121.jpg" target="_blank">
-<img src="docs/hardware_photos/6235768536831824310_121.jpg" alt="Full Hardware Assembly" width="420px" style="transform: rotate(90deg); margin: 90px 0; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); cursor: pointer;">
-</a>
-</p>
-</details>
-
----
-
-<!-- 
-Note on GitHub Behavior:
-Wrapping the <img> in an <a> tag makes it fully clickable. 
-When a user clicks it on GitHub, it will naturally open the full-resolution source image 
-in a new browser tab ("pop") for close-up technical inspection.
--->
-<table align="center" width="100%">
-<tr>
-<td align="center" width="33%">
-<b>OLED Interface</b><br>
-<img src="docs/hardware_photos/6248794734553927220_121.jpg" alt="OLED UI Display" width="100%" style="border-radius:6px; border: 1px solid #e1e4e8;">
-</td>
-<td align="center" width="33%">
-<b>Submersible Pump</b><br>
-<img src="docs/hardware_photos/6248794734553927232_121.jpg" alt="Submersible Pump" width="100%" style="border-radius:6px; border: 1px solid #e1e4e8;">
-</td>
-<td align="center" width="33%">
-<b>Control Circuitry</b><br>
-<img src="docs/hardware_photos/6248794734553927236_121.jpg" alt="STM32 and ESP32" width="100%" style="border-radius:6px; border: 1px solid #e1e4e8;">
-</td>
-</tr>
-</table>
-
----
-
-<table align="center" width="100%" style="border-collapse: collapse; border: none;">
-  <!-- Row 1 -->
-  <tr>
-    <td width="50%" align="center" valign="top" style="padding: 1px; border: none;">
-      <b>Full Hardware Assembly</b><br><br>
-      <a href="docs/hardware_photos/6235768536831824310_121.jpg" target="_blank">
-        <img src="docs/hardware_photos/6235768536831824310_121.jpg" alt="Full Hardware Assembly" width="80%" style="transform: rotate(90deg); margin: 4px 0; border-radius: 2px; border: 1px solid #30363d; cursor: pointer;">
-      </a>
-    </td>
-    <td width="50%" valign="top" style="padding: 1px; border: none;">
-      <b>Local OLED Interface</b><br><br>
-      <a href="docs/hardware_photos/6248794734553927220_121.jpg" target="_blank">
-        <img src="docs/hardware_photos/6248794734553927220_121.jpg" alt="OLED UI Display" width="80%" style="border-radius: 2px; border: 1px solid #30363d; cursor: pointer;">
-      </a>
-    </td>
-  </tr>
-  <!-- Row 2 -->
-  <tr>
-    <td width="50%" valign="middle" style="padding: 1px; border: none;">
-      <b>Submersible Pump</b><br><br>
-      <a href="docs/hardware_photos/6248794734553927232_121.jpg" target="_blank">
-        <img src="docs/hardware_photos/6248794734553927232_121.jpg" alt="Submersible Pump" width="80%" style="border-radius: 2px; border: 1px solid #30363d; cursor: pointer;">
-      </a>
-    </td>
-    <td width="50%" align="center" valign="middle" style="padding: 1px; border: none;">
-      <b>Control Circuitry</b><br><br>
-      <a href="docs/hardware_photos/6248794734553927236_121.jpg" target="_blank">
-        <img src="docs/hardware_photos/6248794734553927236_121.jpg" alt="STM32 and ESP32" width="80%" style="border-radius: 2px; border: 1px solid #30363d; cursor: pointer;">
-      </a>
-    </td>
-  </tr>
-</table>
-
 <table align="center" width="100%" style="border-collapse: collapse; border: none;">
   <!-- Row 1 -->
   <tr>
     <td width="50%" align="center" valign="middle" style="padding: 4px; border: none;">
       <div align="center"><b>Full Hardware Assembly</b></div>
       <a href="docs/hardware_photos/6235768536831824310_121.jpg" target="_blank" style="display: block; margin-top: 4px;">
-        <img src="docs/hardware_photos/6235768536831824310_121.jpg" alt="Full Hardware Assembly" width="150%" height="300" style="object-fit: cover; transform: rotate(90deg); border-radius: 6px; border: 1px solid #30363d; cursor: pointer; display: block;">
+        <img src="docs/hardware_photos/6235768536831824310_121.jpg" alt="Full Hardware Assembly" width="150%" height="350" style="object-fit: cover; transform: rotate(90deg); border-radius: 6px; border: 1px solid #30363d; cursor: pointer; display: block;">
       </a>
     </td>
     <td width="50%" align="center" valign="middle" style="padding: 4px; border: none;">
       <div align="center"><b>Local OLED Interface</b></div>
       <a href="docs/hardware_photos/6248794734553927220_121.jpg" target="_blank" style="display: block; margin-top: 4px;">
-        <img src="docs/hardware_photos/6248794734553927220_121.jpg" alt="OLED UI Display" width="150%" height="300" style="object-fit: cover; border-radius: 6px; border: 1px solid #30363d; cursor: pointer; display: block;">
+        <img src="docs/hardware_photos/6248794734553927220_121.jpg" alt="OLED UI Display" width="150%" height="350" style="object-fit: cover; border-radius: 6px; border: 1px solid #30363d; cursor: pointer; display: block;">
       </a>
     </td>
   </tr>
