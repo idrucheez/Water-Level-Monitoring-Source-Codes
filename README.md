@@ -289,24 +289,28 @@ $$\text{Level \%} = \frac{\text{Empty Distance} - \text{Measured Distance}}{\tex
 
 ---
 
-## Quick Start
+## Installation
 
 ### 1. STM32 Edge Controller (Keil Studio Cloud / Mbed 2)
 1. Open [Keil Studio Cloud](https://studio.keil.arm.com) and create a project with the **ARM Mbed 2** (`mbed.h`) template.
-2. Copy [`stm32_firmware/main.cpp`](./stm32_firmware/main.cpp) into your project root[cite: 14].
-3. Select `NUCLEO-F401RE` as the target, compile, and flash via USB drag-and-drop[cite: 14].
+2. Copy [`stm32_firmware/main.cpp`](./stm32_firmware/main.cpp) into your project root.
+3. Select `NUCLEO-F401RE` as the target, compile, and flash via USB drag-and-drop.
 
 ### 2. ESP32 IoT Bridge (Arduino IDE)
-1. Open [`esp32_firmware/esp32_blynk.ino`](./esp32_firmware/esp32_blynk.ino) in Arduino IDE[cite: 14].
+1. Open [`esp32_firmware/esp32_blynk.ino`](./esp32_firmware/esp32_blynk.ino) in Arduino IDE.
 2. Configure credentials in the header definitions:
-   ```cpp
-   #define BLYNK_TEMPLATE_ID   "YOUR_TEMPLATE_ID"
-   #define BLYNK_TEMPLATE_NAME "Water Monitor"
-   #define BLYNK_AUTH_TOKEN    "YOUR_AUTH_TOKEN"
-   #define WIFI_SSID           "YOUR_2.4GHZ_WIFI"
-   #define WIFI_PASS           "YOUR_PASSWORD"
+```cpp
+#define BLYNK_TEMPLATE_ID   "YOUR_TEMPLATE_ID"
+#define BLYNK_TEMPLATE_NAME "Water Monitor"
+#define BLYNK_AUTH_TOKEN    "YOUR_AUTH_TOKEN"
+#define WIFI_SSID           "YOUR_2.4GHZ_WIFI"
+#define WIFI_PASS           "YOUR_PASSWORD"
+```
 
+> [!TIP]
+> Open the Serial Monitor at **115200 baud** to verify the ESP32 is successfully parsing UART data and connecting to Blynk.
 
+---
 
 <details>
 <summary><strong> Bill of Materials (BOM) </strong></summary>
@@ -323,55 +327,7 @@ $$\text{Level \%} = \frac{\text{Empty Distance} - \text{Measured Distance}}{\tex
 | Main load supply | Three 18650 cells in series, approximately 11.1 V nominal and 12.6 V fully charged |
 
 See [`docs/CONNECTIONS.md`](docs/CONNECTIONS.md) for the full wiring table and electrical cautions.
-
 </details>
-
-<details>
-<summary><strong> Implemented Thresholds </strong></summary>
-
-| Parameter | Code Value |
-| :--- | :--- |
-| **Empty-tank distance** | `18.5 cm` |
-| **Full-tank distance** | `3.0 cm` |
-| **Pump ON threshold** | `< 90%` |
-| **Pump OFF threshold** | `≥ 90%` |
-| **Critical-low alert** | `≤ 10%` (Triggers Buzzer + Blynk Event) |
-| **Full alert** | `≥ 95%` (Triggers Buzzer + Blynk Event) |
-| **UART Baud Rate** | `9600` |
-| **Blynk Update Interval** | `2.0 s` |
-| **STM32 timeout on ESP32** | `10 s` |
-
-</details>
-
----
-
-## Installation
-
-### 1. STM32 Edge Firmware (Keil Studio Cloud)
-1. Open your workspace on [Keil Studio Cloud](https://studio.keil.arm.com).
-2. Initialize an empty project utilizing the classic **ARM Mbed 2** core template (`mbed.h`).
-3. Import the source code from [`stm32_firmware/main.cpp`](./stm32_firmware/main.cpp).
-4. Set the target build system to `NUCLEO-F401RE`, compile, and flash the device.
-
-```text
-L:<level>,D:<distance>,P:<pump_state>
-```
-
-### 2. ESP32 IoT Firmware (Arduino IDE)
-1. Launch **Arduino IDE** and ensure the ESP32 board support package and **Blynk library** are installed.
-2. Open [`esp32_firmware/esp32_blynk.ino`](./esp32_firmware/esp32_blynk.ino).
-3. Populate your specific network credentials and authentication tokens:
-   ```cpp
-   #define BLYNK_TEMPLATE_ID   "YOUR_TEMPLATE_ID"
-   #define BLYNK_TEMPLATE_NAME "YOUR_TEMPLATE_NAME"
-   #define BLYNK_AUTH_TOKEN    "YOUR_AUTH_TOKEN"
-   #define WIFI_SSID           "YOUR_WIFI_SSID"
-   #define WIFI_PASS           "YOUR_WIFI_PASSWORD"
-   ```
-   4. Compile and upload directly to your ESP32 board.
-
-> [!TIP]
-> Open the Serial Monitor at **115200 baud** to verify the ESP32 is successfully parsing UART data and connecting to Blynk.
 
 ---
 
