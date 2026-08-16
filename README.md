@@ -14,20 +14,6 @@
 
 ---
 
-## 📋 Contents
-
-* [Project Overview](#project-overview)
-* [Features](#features)
-* [Technical Details](#technical-details) 
-* [Installation](#installation)
-* [Usage](#usage)
-* [Results](#results)
-* [Resources](#resources)
-* [Contributing](#contributing)
-* [License](#license)
-
----
-
 <p align="center">
   <strong>Dual-core automated water tank monitor and edge-level pump controller.</strong><br>
   <em>Microprocessors & Computer Architecture (EFB 2073 / EEB 2083) • Universiti Teknologi PETRONAS</em>
@@ -35,18 +21,17 @@
 
 <p align="center">
   <a href="#overview">Overview</a> •
-  <a href="#prototype-gallery">Gallery</a> •
   <a href="#system-architecture">Architecture</a> •
   <a href="#pinout--schematic">Pinout & Schematic</a> •
   <a href="#thresholds--calibration">Calibration</a> •
   <a href="#installation">Installation</a> •
   <a href="#results">Results</a> •
-  <a href="#documentation">Docs</a>
+  <a href="#license">License</a>
 </p>
 
 ---
 
-## 📖 Overview
+## Overview
 
 An embedded water-tank monitoring and control prototype developed using an **STM32 Nucleo-F401RE** as the real-time controller and an **ESP32 DevKit** as the Wi-Fi/Blynk bridge. The system measures the distance between an HC-SR04 ultrasonic sensor and the water surface, converts the measurement into a calibrated water-level percentage, controls a 12 V pump through a relay module, displays live status on an SSD1306 OLED, produces buzzer alerts, and sends data to the Blynk IoT platform.
 
@@ -107,32 +92,32 @@ Developed as a comprehensive hardware-software portfolio project for **EFB 2073/
 
 ---
 
-## Technical Details 
+## System Architecture
 
 <details open>
-<summary><strong> System Architecture Diagram </strong></summary>
+<summary><strong> System Architecture </strong></summary>
 
 ```mermaid
 graph LR
-    subgraph STM32 ["🧠 STM32 Nucleo-F401RE (Edge Controller)"]
+    subgraph STM32 ["STM32 Nucleo-F401RE (Edge Controller)"]
         A["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/pulse.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/pulse.svg)' width='20' height='20' /> HC-SR04 Sensor"] -->|5-sample avg| B["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/symbol-variable.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/symbol-variable.svg)' width='20' height='20' /> Level Calculation"]
         B --> C["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/screen-normal.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/screen-normal.svg)' width='20' height='20' /> SSD1306 OLED"]
         B --> D["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/zap.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/zap.svg)' width='20' height='20' /> 12V Relay / Pump Control"]
         B --> E["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/bell-dot.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/bell-dot.svg)' width='20' height='20' /> Piezo Buzzer"]
     end
 	
-    subgraph ESP32 ["📡 ESP32 DevKit (IoT Bridge)"]
+    subgraph ESP32 ["ESP32 DevKit (IoT Bridge)"]
         F["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/terminal.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/terminal.svg)' width='20' height='20' /> UART Parser (9600 8N1)"] --> G["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/cloud.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/cloud.svg)' width='20' height='20' /> Blynk Cloud API"]
     end
 
-    subgraph Cloud ["☁️ Blynk Cloud / Mobile App"]
+    subgraph Cloud ["Blynk Cloud / Mobile App"]
         H["<img src='[https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/dashboard.svg](https://raw.githubusercontent.com/visualpharm/codicons/master/src/icons/dashboard.svg)' width='20' height='20' /> App Dashboard & Event Logging"]
     end
 
     STM32 -- "UART (9600)<br/>L:level, D:dist, P:state" --> ESP32
     ESP32 -- "V2 Override<br/>(OVERRIDE:0/1)" --> STM32
     ESP32 <-->|Wi-Fi / 2s Interval| Cloud
-    D --> I["⚡ 12V DC Pump"]
+    D --> I["12V DC Pump"]
 
     %% Visual styling configurations to decrease vertical height and footprint
     classDef stm32 fill:#03234B,stroke:#fff,stroke-width:1px,color:#fff;
@@ -259,30 +244,7 @@ $$\text{Level \%} = \frac{\text{Empty Distance} - \text{Measured Distance}}{\tex
 > [!TIP]
 > Open the Serial Monitor at **115200 baud** to verify the ESP32 is successfully parsing UART data and connecting to Blynk.
 
----
-
-<details>
-<summary><strong> Bill of Materials (BOM) </strong></summary>
-
-| Component | Model |
-|---|---|
-| Main controller | STM32 Nucleo-F401RE |
-| IoT bridge | ESP32 DevKit with CP2102 USB interface |
-| Distance sensor | HC-SR04 ultrasonic sensor |
-| Display | SSD1306 OLED, 128×32, I2C, address 0x3C |
-| Relay module | 12 V relay module used to switch the pump |
-| Pump | 12 V DC submersible pump |
-| Alert device | Piezo buzzer |
-| Main load supply | Three 18650 cells in series, approximately 11.1 V nominal and 12.6 V fully charged |
-
-See [`docs/CONNECTIONS.md`](docs/CONNECTIONS.md) for the full wiring table and electrical cautions.
-</details>
-
----
-
-## Blynk Configuration
-
-Create these datastreams:
+3. Create these virtual datastreams and event hooks on Blynk Console:
 
 | Virtual pin | Data | Suggested type/range |
 |---|---|---|
@@ -291,45 +253,22 @@ Create these datastreams:
 | V2 | Override command | Integer, 0–1 |
 | V3 | Distance | Double, 0–400 |
 | V4 | Wi-Fi RSSI | Integer, approximately -100 to 0 |
+| Events | critical_low, tank_full | System Hooks triggers |
 
-Create the following events:
+---
 
-```text
-critical_low
-tank_full
-```
+## Results
 
-Detailed setup is available in [`docs/BLYNK_SETUP.md`](docs/BLYNK_SETUP.md).
+| Test Condition | Air Gap Distance | Computed Level | Pump Relay | Buzzer Response |
+| :--- | :---: | :---: | :---: | :--- |
+| **Empty Tank** | `18.5 cm` | `0.0%` | **ON** | 2s entry tone |
+| **Mid Level** | `~10.8 cm` | `50.0%` | **ON** | Silent |
+| **Full Level** | `~3.0 cm` | `100.0%` | **OFF** | 2s entry tone |
+| **Critical Low** | `~17.0 cm` | `10.0%` | **ON** | 2s entry tone |
 
-## Testing 
+*Performance:* 5-sample averaging delivered **$\pm 1\text{ cm}$** steady-state distance precision with cloud dashboard update latencies under **2–3 seconds**.
 
-The documented test container used:
-
-- Empty distance: 18.5 cm
-- Half-level distance: approximately 10.8 cm
-- Full distance: approximately 3.0 cm
-
-| Condition | Expected displayed level | Pump | Buzzer |
-|---|---:|---|---|
-| Empty | 0% | ON | Silent initially unless the low threshold is crossed |
-| Half | Approximately 50% | ON | Silent |
-| Full | 100% | OFF | 2-second alert |
-| Critical low | Approximately 10% | ON | 2-second alert |
-
-The project notes report approximately ±1 cm ultrasonic consistency after five-sample averaging and a Blynk update delay of roughly 2–3 seconds.
-
-## Future Improvements
-
-- Add relay hysteresis by separating pump-ON and pump-OFF thresholds
-- Add event latching or cooldown for Blynk notifications
-- Add a water-flow sensor
-- Add redundant level sensing
-- Add pump dry-run and overcurrent protection
-- Add low-battery monitoring
-- Add SMS or cellular fallback
-- Add solar charging
-- Support multiple tanks
-- Move credentials into a private configuration file
+---
 
 ## License
 
