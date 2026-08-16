@@ -291,7 +291,7 @@ graph LR
 
 ## Pinout & Schematic
 
-<table align="center" width="100%" style="border-collapse: collapse; border: none;">
+<table align="left" width="100%" style="border-collapse: collapse; border: none;">
   <tr>
     <!-- Left Column: Pinout Tables -->
     <td width="55%" valign="top" style="padding: 0 10px 0 0; border: none;">
@@ -301,20 +301,20 @@ graph LR
         <table width="100%" style="font-size: 13px;">
           <thead>
             <tr>
-              <th align="center">Pin</th>
+              <th align="left">Pin</th>
               <th align="left">Function</th>
               <th align="left">Hardware Target / Notes</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td align="center"><code>PA_0</code></td><td>HC-SR04 TRIG</td><td>10 µs trigger pulse output</td></tr>
-            <tr><td align="center"><code>PA_1</code></td><td>HC-SR04 ECHO</td><td><strong>Via 1kΩ / 2kΩ divider (3.3V)</strong></td></tr>
-            <tr><td align="center"><code>PB_9</code> / <code>PB_8</code></td><td>I2C1 SDA / SCL</td><td>SSD1306 OLED (Addr: <code>0x3C</code>, 100 kHz)</td></tr>
-            <tr><td align="center"><code>D4</code></td><td>OLED RST</td><td>Hardware display reset</td></tr>
-            <tr><td align="center"><code>PA_6</code></td><td>Buzzer</td><td>Active HIGH alarm driver</td></tr>
-            <tr><td align="center"><code>PB_6</code></td><td>Relay Signal</td><td>Active HIGH relay trigger (Avoids PA_7 conflict)</td></tr>
-            <tr><td align="center"><code>PA_9</code></td><td>UART TX</td><td>To ESP32 <code>GPIO16</code> (9600 baud)</td></tr>
-            <tr><td align="center"><code>PA_10</code></td><td>UART RX</td><td>From ESP32 <code>GPIO17</code></td></tr>
+            <tr><td align="left"><code>PA_0</code></td><td>HC-SR04 TRIG</td><td>10 µs trigger pulse output</td></tr>
+            <tr><td align="left"><code>PA_1</code></td><td>HC-SR04 ECHO</td><td><strong>Via 1kΩ / 2kΩ divider (3.3V)</strong></td></tr>
+            <tr><td align="left"><code>PB_9</code> / <code>PB_8</code></td><td>I2C1 SDA / SCL</td><td>SSD1306 OLED (Addr: <code>0x3C</code>, 100 kHz)</td></tr>
+            <tr><td align="left"><code>D4</code></td><td>OLED RST</td><td>Hardware display reset</td></tr>
+            <tr><td align="left"><code>PA_6</code></td><td>Buzzer</td><td>Active HIGH alarm driver</td></tr>
+            <tr><td align="left"><code>PB_6</code></td><td>Relay Signal</td><td>Active HIGH relay trigger (Avoids PA_7 conflict)</td></tr>
+            <tr><td align="left"><code>PA_9</code></td><td>UART TX</td><td>To ESP32 <code>GPIO16</code> (9600 baud)</td></tr>
+            <tr><td align="left"><code>PA_10</code></td><td>UART RX</td><td>From ESP32 <code>GPIO17</code></td></tr>
           </tbody>
         </table>
       </details>
@@ -325,15 +325,15 @@ graph LR
         <table width="100%" style="font-size: 13px;">
           <thead>
             <tr>
-              <th align="center">Pin</th>
+              <th align="left">Pin</th>
               <th align="left">Function</th>
               <th align="left">Hardware Target / Notes</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td align="center"><code>GPIO16</code></td><td>UART2 RX</td><td>Connected to STM32 <code>PA_9</code> (TX)</td></tr>
-            <tr><td align="center"><code>GPIO17</code></td><td>UART2 TX</td><td>Connected to STM32 <code>PA_10</code> (RX)</td></tr>
-            <tr><td align="center"><code>GND</code></td><td>Common GND</td><td><strong>Mandatory common ground reference</strong></td></tr>
+            <tr><td align="left"><code>GPIO16</code></td><td>UART2 RX</td><td>Connected to STM32 <code>PA_9</code> (TX)</td></tr>
+            <tr><td align="left"><code>GPIO17</code></td><td>UART2 TX</td><td>Connected to STM32 <code>PA_10</code> (RX)</td></tr>
+            <tr><td align="left"><code>GND</code></td><td>Common GND</td><td><strong>Mandatory common ground reference</strong></td></tr>
           </tbody>
         </table>
       </details>
